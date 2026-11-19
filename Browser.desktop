@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Internet Browser
+Comment=Firefox ESR
+Exec=firefox-esr
+Icon=web-browser
+Terminal=false
+Categories=Utility;

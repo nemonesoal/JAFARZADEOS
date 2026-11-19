@@ -1,0 +1,36 @@
+#!/bin/sh
+set -eu
+case "${1:-main}" in
+  display) exec xfce4-display-settings ;;
+  appearance) exec xfce4-appearance-settings ;;
+  desktop) exec xfdesktop-settings ;;
+  keyboard) exec xfce4-keyboard-settings ;;
+  mouse) exec xfce4-mouse-settings ;;
+  sound) exec pavucontrol ;;
+  network) exec nm-connection-editor ;;
+  bluetooth) exec blueman-manager ;;
+  power) exec xfce4-power-manager-settings ;;
+  system) exec xfce4-taskmanager ;;
+  files) exec thunar ;;
+  *)
+    if command -v yad >/dev/null 2>&1; then
+      selected="$(yad --title="JAFARZADEOS Control Center" --width=560 --height=420 \
+        --list --print-column=1 --column="Setting" --column="Description" \
+        "display" "Display and resolution" \
+        "appearance" "Theme, fonts and icons" \
+        "desktop" "Wallpaper and desktop" \
+        "keyboard" "Keyboard shortcuts" \
+        "mouse" "Mouse and touchpad" \
+        "sound" "Sound and volume" \
+        "network" "Wi-Fi and network" \
+        "bluetooth" "Bluetooth devices" \
+        "power" "Power management" \
+        "system" "Running applications" \
+        "files" "Files and connected drives" \
+        --button="Open:0" --button="Close:1")" || exit 0
+      exec "$0" "$selected"
+    else
+      exec xfce4-settings-manager
+    fi
+    ;;
+esac

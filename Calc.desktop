@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Calc
+Comment=Spreadsheet editor
+Exec=libreoffice --calc
+Icon=libreoffice-calc
+Terminal=false
+Categories=Utility;

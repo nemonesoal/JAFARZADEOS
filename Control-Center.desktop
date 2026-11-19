@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Control Center
+Comment=JAFARZADEOS settings
+Exec=/usr/local/bin/jafarzadeos-control
+Icon=preferences-system
+Terminal=false
+Categories=Utility;

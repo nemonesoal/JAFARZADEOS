@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Writer
+Comment=Word-compatible document editor
+Exec=libreoffice --writer
+Icon=libreoffice-writer
+Terminal=false
+Categories=Utility;

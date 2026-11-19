@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=My PC
+Comment=Browse files and connected drives
+Exec=thunar
+Icon=system-file-manager
+Terminal=false
+Categories=Utility;

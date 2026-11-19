@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Code Editor
+Comment=Geany programming editor
+Exec=geany
+Icon=accessories-text-editor
+Terminal=false
+Categories=Utility;

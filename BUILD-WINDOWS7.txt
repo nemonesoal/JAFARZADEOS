@@ -1,0 +1,15 @@
+JAFARZADEOS 1.1 build instructions for Windows 7 64-bit host
+
+1. Confirm your CPU is 64-bit and hardware virtualization (VT-x/AMD-V) is enabled.
+2. Install a VirtualBox 6.1 release compatible with Windows 7.
+3. Create a Debian 12 amd64 virtual machine: 4 GB RAM minimum (6 GB recommended), 2 CPU cores, 40 GB dynamically allocated disk, NAT networking.
+4. Install Debian 12 amd64 and connect it to the internet.
+5. Copy this source ZIP into Debian and extract it.
+6. In Terminal, enter the extracted folder and run: sudo ./build.sh
+7. Wait for package download and ISO build. The resulting *.iso is in the project folder.
+8. Copy the ISO back to Windows using a VirtualBox shared folder.
+9. Write the ISO to a USB drive using Rufus. The selected USB drive will be erased.
+10. Persistence requires a separate ext4 partition labeled persistence with a root-level persistence.conf containing: / union
+11. Back up the USB first; test in a VM and then on the target PC.
+
+The target PC boots the resulting USB independently. Windows 7 is only the host used to run the build VM.
