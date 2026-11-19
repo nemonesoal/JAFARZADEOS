@@ -14,8 +14,16 @@ jobs:
       - name: Get source code
         uses: actions/checkout@v4
 
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y live-build debootstrap squashfs-tools xorriso
+
       - name: Build ISO
-        run: sudo ./build.sh
+        run: sudo bash ./build.sh
+
+      - name: Find ISO
+        run: find . -type f -name "*.iso"
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4
